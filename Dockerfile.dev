@@ -1,0 +1,13 @@
+FROM node:18-alpine
+WORKDIR /app
+COPY ./package*.json ./
+RUN npm install
+COPY . .
+
+EXPOSE 3000
+
+CMD ["npm","run","dev"]
+
+
+# Run the container using [docker build -t app_name .]docker build -t nextapp -f Dockerfile.dev .
+# docker build -t nextapp -f Dockerfile.dev .
