@@ -13,7 +13,17 @@ const Profile = () => {
           {/* Pushing into Params Object of the url so that we can use it in the page */}
           <Link href='/profile/1'>Profile 1</Link>
           <li onClick={()=> router.push('/profile/2')}>Profile 2</li>
-          <li onClick={()=> router.push('/profile/3')}>Profile 3</li>
+          <Link 
+          //Prefetch can be disabled by passing `prefetch={false}`
+          prefetch={true}  //This will prefetch the data of the page for faster loading and better client side experience
+          href={{
+            pathname: '/profile/3',
+            query:{
+              userName: 'John Doe',
+              userID: 12,
+              person: JSON.stringify({age : 18})
+            }
+          }}>Profile 3</Link>
         </ul>
       </div>
     </div>
