@@ -14,8 +14,9 @@ const Profile = () => {
           <Link href='/profile/1'>Profile 1</Link>
           <li onClick={()=> router.push('/profile/2')}>Profile 2</li>
           <Link 
-          //Prefetch can be disabled by passing `prefetch={false}`
-          prefetch={true}  //This will prefetch the data of the page for faster loading and better client side experience
+          
+          prefetch={true}  // Prefetch can be disabled by passing `prefetch={false}`This will prefetch the data of the page for faster loading and better client side experience
+          scroll = {false}  //This will disable the scroll to top of the page when the link is clicked The default behavior of Link is to scroll to the top of the page
           href={{
             pathname: '/profile/3',
             query:{
