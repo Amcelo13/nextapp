@@ -16,7 +16,7 @@ const Profile = () => {
           <Link 
           
           prefetch={true}  // Prefetch can be disabled by passing `prefetch={false}`This will prefetch the data of the page for faster loading and better client side experience
-          scroll = {true}  //This will disable the scroll to top of the page when the link is clicked The default behavior of Link is to scroll to the top of the page
+          scroll = {false}  //This will disable the scroll to top of the page when the link is clicked The default behavior of Link is to scroll to the top of the page
           href={{
             pathname: '/profile/3',
             query:{
