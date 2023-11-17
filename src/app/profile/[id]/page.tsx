@@ -9,7 +9,6 @@ const MyProfile = () => {
     <div>
       <div>My Profile ID - {params.id}</div>
       <h2 className="cursor-pointer" onClick={() => router.push('/profile')}>
-        
         Back to Main profile page</h2>
     </div>
 

@@ -1,9 +1,31 @@
-"use client"
+// "use client"
+
 import Image from "next/image"
 import Pahad from "../../public/mount.jpg"
 import Dark from "../../public/dark.jpg"
 import Fid from "../../public/fid.gif"
-import Header from "@/components/Header"
+import { Metadata } from "next"
+
+//TODO: When using metadata directly in the page we can only use "use client" only when we dont declare and import the below function from a file not directly 
+export  const metadata: Metadata = {
+  title: 'Next App Page Title',
+  description: 'My page description',
+  openGraph: {
+     title: 'Next App Page Title',
+      description: 'My page description',
+       url: 'https://www.example.com/page',
+       siteName: 'SiteName',
+        images: [
+            {
+              url: 'https://www.example.ie/og-image-01.jpg',
+              width: 800,
+              height: 600,
+              alt: 'Og Image Alt',
+            },
+        ]
+  }
+}
+
 
 const Home = () => {
   const myLoader = () => {
