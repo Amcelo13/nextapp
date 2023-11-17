@@ -15,7 +15,7 @@
 
 //     const newParam = searchParams.get('new')       //TODO: On writing the query in url header i can console by useSearchParams hook by just printing [45] like this of new - http://localhost:3000/posts/123?new=45
 //     console.log('newParam: ', newParam);
-    
+
 //     return <div>
 //         Post ID
 //     </div>
@@ -25,24 +25,22 @@
 // export default POSTID;
 
 //TODO: By server side rendering
-const getPostById = async (postID: string) => {
-    const response = await fetch(`http://localhost:3000/api/posts/12` ,{
-        method:'GET'
+const getPostById = (postID: string) => {
+    const response = fetch(`http://localhost:3000/api/posts/${postID}`, {
+        method: 'GET'
     })
-    const res= response.json();
-    console.log(res)
-    return res
-
+    // const data =  response.json();
+    return response;
 }
-const POSTID =  ({searchParams, params}: any) => { 
-    const res =  getPostById(params.id)
-    // console.log('post---->', res);
 
-    // console.log('searchParams---->', searchParams);    //TODO: On writing the query in url header i can console by useSearchParams hook by just printing [45] like this of new - http://localhost:3000/posts/123?new=45
+const POSTID = async ({ searchParams, params }: any) => {
+    const res = await getPostById(params.id)
+    const res1 = await res.json();
+    console.log('searchParams---->', searchParams);    //TODO: On writing the query in url header i can console by useSearchParams hook by just printing [45] like this of new - http://localhost:3000/posts/123?new=45
 
     return <div>
-        Post ID  - {searchParams.new}  <br/>
-        {/* Post Title = {res.post.title} */}
+        Post ID  - {searchParams.new}  <br />
+        Post Title = {res1.post?.title} <br />
     </div>
 }
 export default POSTID;

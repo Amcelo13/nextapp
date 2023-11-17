@@ -5,7 +5,7 @@ import { NextResponse } from "next/server";
 const posts: any  = [
     {
         id:12,
-        title: "Heeloo Guyss",
+        title: "Heelo Guyss",
         description: "Description 1"
     }
 ]
