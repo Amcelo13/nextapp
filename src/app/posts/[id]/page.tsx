@@ -1,5 +1,7 @@
 // TODO:                                                                            Query and Params in Nextjs
 
+import axios from "axios";
+
 
 //TODO: By client side rendering
 // 'use client'
@@ -25,10 +27,18 @@
 // export default POSTID;
 
 //TODO: By server side rendering
-const getPostById = (postID: string) => {
+const getPostById = async(postID: string) => {
     const response = fetch(`http://localhost:3000/api/posts/${postID}`, {
-        method: 'GET'
+        method: 'GET',
+        next: {               //TODO: This is CLEAR the cache of the server component AND  then it will fetch the new data
+            revalidate: 5000, //TODO: The revalidate property is specific to Next.js's Incremental Static Regeneration (ISR) feature
+        }
     })
+    const res2= await  axios.get(`http://localhost:3000/api/posts/${postID}`,{
+        next:{
+            revalidate: 5000,
+        }
+    }) 
     // const data =  response.json();
     return response;
 }
@@ -43,4 +53,4 @@ const POSTID = async ({ searchParams, params }: any) => {
         Post Title = {res1.post?.title} <br />
     </div>
 }
-export default POSTID;
+export default POSTID; 
