@@ -23,14 +23,14 @@ export const generateMetaData = async ({ params }: any) => {
         openGraph: {
             title: post.title,
             description: post.description,
-            url:'https://www.example.com/posts/1',
+            url:'https://acme.com',
             siteName: 'My Blog Site',
             images: [
                 {
                     url: post.image,
                     width: 800,
                     height: 600,
-                    alt: 'Og Image Alt',
+                    alt: 'Og Image Alt', 
                 }
             ],
         }

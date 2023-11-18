@@ -13,7 +13,7 @@ export  const metadata: Metadata = {
   openGraph: {
      title: 'Next App Page Title',
       description: 'My page description',
-       url: 'https://www.example.com/page',
+       url: 'https://acme.com',
        siteName: 'SiteName',
         images: [
             {
@@ -43,7 +43,7 @@ const Home = () => {
      //TODO: Importing the src beforehand that does'nt require the width and height to be defined beforehand
 
      <div className="w-[500px]">
-        <Image src={Dark}  alt="Dark" />  
+        {/* <Image src={Dark}  alt="Dark" />   */}
      </div>
 
      //TODO: GIF
@@ -60,7 +60,7 @@ const Home = () => {
         // loader={myLoader}
         quality={2}
         sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-      />
+      />    
 
 
     </main>
