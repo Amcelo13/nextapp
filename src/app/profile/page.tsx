@@ -5,7 +5,7 @@ import { useRouter } from "next/navigation"
 const Profile = () => {
   const router = useRouter()
   console.log('Router----> ', router);
-  return (
+  return (  
     <div>
       <h1>My list of Profiles</h1>
       <div>

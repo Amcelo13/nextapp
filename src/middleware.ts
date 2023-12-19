@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 
-const isLogged: boolean = false;
+const isLogged: boolean = true;
 const middleware = (request: NextRequest) => {
     let cookie = request.cookies.get('my-cookie')
     let header = new Headers(request.headers)

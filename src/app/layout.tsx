@@ -4,6 +4,7 @@ import './globals.css'
 
 const inter = Inter({ subsets: ['latin'] })
 const openn = Open_Sans({subsets: ['latin'], weight:"800"})
+import { Toaster, toast } from 'sonner'
 
 export const metadata: Metadata = {
   title: 'Next App Main Title',
