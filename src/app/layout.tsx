@@ -3,19 +3,23 @@ import { Inter, Open_Sans } from 'next/font/google'
 import './globals.css'
 
 const inter = Inter({ subsets: ['latin'] })
-const openn = Open_Sans({subsets: ['latin'], weight:"800"})
-import { Toaster, toast } from 'sonner'
 
-export const metadata: Metadata = {
+export const openFont = Open_Sans({     // Secondary font that i can use anywhere
+  subsets: ['latin'], weight: ["800", '600'],
+  style: "italic"
+})
+
+
+const metadata: Metadata = {
   title: 'Next App Main Title',
   description: 'My app main description',
 }
 
-const RootLayout = ({children}: {children: React.ReactNode}) => {
+const RootLayout = ({ children }: { children: React.ReactNode }) => {
   return (
-    <html lang="en"> 
-      <body className={inter.className}>{children}</body>
-      {/* <body className={openn.className}>{children}</body> */}
+    <html lang="en">
+      {/* Primary font */}
+      <body className={inter.className}>{children}</body>    
     </html>
   )
 }

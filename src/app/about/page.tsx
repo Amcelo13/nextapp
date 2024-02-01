@@ -1,8 +1,13 @@
 "use client"
 
+import { openFont } from "../layout"
+
+
+
 const About = () => {
   return (
-    <div>About Page.tsx here</div> 
+    <div className={openFont.className}
+    >About Page.tsx here</div> 
   )
 }
 
