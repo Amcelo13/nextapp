@@ -28,14 +28,10 @@ export  const metadata: Metadata = {
 
 
 const Home = () => {
-  const myLoader = () => {
-    return `https://imgd-ct.aeplcdn.com/1056x660/cw/ec/23766/Ford-Mustang-Front-view-74318.jpg?v=201711021421&q=80?w=500&q=75`;
-  };
-  
+
   return (
     <main className="flex min-h-screen flex-col items-center justify-between p-24">
      Main Page of the Application
-
 
       //TODO: Direct path that requires the width and height to be defined beforehand
      <Image  src='/mount.jpg' width={1000} height={500} alt="Mountains" />
